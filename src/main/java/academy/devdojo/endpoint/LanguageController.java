@@ -1,19 +1,23 @@
 package academy.devdojo.endpoint;
 
 import academy.devdojo.domain.Language;
+import academy.devdojo.service.LanguageService;
 import java.util.List;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import javax.inject.Inject;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
-@RestController
-@RequestMapping(value = "/v1/language")
+@Path("v1/language")
+@Produces(MediaType.APPLICATION_JSON)
 public class LanguageController {
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public List<Language> list() {
-        return List.of(new Language("Java"),new Language("Python"));
+    @Inject
+    LanguageService languageService;
 
+    @GET
+    public List<Language> list() {
+        return languageService.list();
     }
 }
