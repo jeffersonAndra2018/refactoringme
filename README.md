@@ -17,6 +17,6 @@ Project to have some fun and to help some DevDojo Padawans ;)
 1. Run `docker-compose up` to have an instance of MariaDB
 1. Connect to MariaDB server and create a schema called `refactoringme` (check datasource inside application.properties for credentials)
 2. Execute `./mvnw compile quarkus:dev` to run the project
-1. Open Swagger documentation: [localhost:8080/swagger-ui/](localhost:8080/swagger-ui/) to see available endpoints
+1. Open Swagger documentation: [http://localhost:8080/swagger-ui/](http://localhost:8080/swagger-ui/) to see available endpoints
 
 
