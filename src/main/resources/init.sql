@@ -3,7 +3,7 @@ VALUES (1, 'Java');
 INSERT INTO refactoringme.language (id, name)
 VALUES (2, 'Javascript');
 INSERT INTO refactoringme.language (id, name)
-VALUES (2, 'C');
+VALUES (3, 'C');
 INSERT INTO refactoringme.language (id, name)
 VALUES (4, 'Python');
 INSERT INTO refactoringme.language (id, name)

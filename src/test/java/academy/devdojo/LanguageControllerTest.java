@@ -1,18 +1,26 @@
 package academy.devdojo;
 
-import io.quarkus.test.junit.QuarkusTest;
-import org.junit.jupiter.api.Test;
-
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.Matchers.emptyArray;
+
+import io.quarkus.test.junit.QuarkusTest;
+import org.junit.jupiter.api.Test;
 
 @QuarkusTest
 public class LanguageControllerTest {
 
     @Test
-    public void listShouldReturnArrayOfLanguageWhenRequested() {
+    public void listShouldReturnArrayOfLanguageWhenRequestedWithParameters() {
+        given()
+            .when().get("/v1/language?startPage=1&pageSize=5")
+            .then()
+            .statusCode(200)
+            .body(not(emptyArray()));
+    }
+
+    @Test
+    public void listShouldReturnArrayOfLanguageWhenRequestedWithoutParameters() {
         given()
             .when().get("/v1/language")
             .then()
