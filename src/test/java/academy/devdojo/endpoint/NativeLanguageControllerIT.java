@@ -1,4 +1,4 @@
-package academy.devdojo;
+package academy.devdojo.endpoint;
 
 import io.quarkus.test.junit.SubstrateTest;
 

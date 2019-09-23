@@ -28,6 +28,7 @@ public class OriginalCodeService {
 
     @Transactional
     public Long save(OriginalCode originalCode) {
+        originalCode.setId(null);
         em.persist(originalCode);
         em.flush();
         return originalCode.getId();

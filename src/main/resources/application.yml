@@ -1,9 +1,0 @@
-quarkus:
-  datasource:
-    url: jdbc:mariadb://localhost:3306/refactoringme
-    driver: org.postgresql.Driver
-    username: root
-    password: root
-    hibernate-orm:
-      database:
-      generation: update

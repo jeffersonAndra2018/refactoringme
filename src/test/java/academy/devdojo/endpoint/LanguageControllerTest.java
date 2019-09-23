@@ -1,4 +1,4 @@
-package academy.devdojo;
+package academy.devdojo.endpoint;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.not;
@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 public class LanguageControllerTest {
 
     @Test
-    public void listShouldReturnArrayOfLanguageWhenRequestedWithParameters() {
+    void listShouldReturnArrayOfLanguageWhenRequestedWithParameters() {
         given()
             .when().get("/v1/language?startPage=1&pageSize=5")
             .then()
@@ -20,7 +20,7 @@ public class LanguageControllerTest {
     }
 
     @Test
-    public void listShouldReturnArrayOfLanguageWhenRequestedWithoutParameters() {
+    void listShouldReturnArrayOfLanguageWhenRequestedWithoutParameters() {
         given()
             .when().get("/v1/language")
             .then()
