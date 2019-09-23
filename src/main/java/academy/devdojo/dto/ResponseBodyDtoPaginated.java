@@ -10,8 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ResponseBodyDto<E> {
+public class ResponseBodyDtoPaginated<E> {
 
     private List<E> entities;
+    private Long totalResults;
 
 }
