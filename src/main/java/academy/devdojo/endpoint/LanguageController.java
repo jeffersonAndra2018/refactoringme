@@ -1,7 +1,7 @@
 package academy.devdojo.endpoint;
 
 import academy.devdojo.domain.Language;
-import academy.devdojo.dto.ResponseBodyDto;
+import academy.devdojo.dto.ResponseBodyDtoPaginated;
 import academy.devdojo.service.LanguageService;
 import javax.inject.Inject;
 import javax.ws.rs.DefaultValue;
@@ -19,7 +19,7 @@ public class LanguageController {
     LanguageService languageService;
 
     @GET
-    public ResponseBodyDto<Language> list(@DefaultValue("1") @QueryParam("startPage") int startPage,
+    public ResponseBodyDtoPaginated<Language> list(@DefaultValue("1") @QueryParam("startPage") int startPage,
         @DefaultValue("5") @QueryParam("pageSize") int pageSize) {
         return languageService.list(startPage, pageSize);
     }
